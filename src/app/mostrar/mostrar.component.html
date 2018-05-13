@@ -1,0 +1,10 @@
+<div *ngIf="mascota.nombre" >
+    <ul>
+        <li>{{mascota.nombre}}</li>
+        <li>{{mascota.fecha}}</li>
+        <li>{{(mascota.tipo == 0) ? 'Gato' : 'Perro'}}</li>
+        <li>
+            <img width="20" height="20" [src]="'http://localhost:8080/fotos/'+mascota.ruta"  alt="" />
+        </li>
+    </ul>
+</div>

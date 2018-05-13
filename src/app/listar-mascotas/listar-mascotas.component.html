@@ -1,0 +1,26 @@
+<div class="">
+    <h2>Mascotas</h2>
+
+    <table id="" *ngIf="estaCargado">
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Tipo</th>
+            <th>Foto</th>
+            <th>Borrar</th>
+            <!--th>Modificar</th-->
+        </tr>
+
+        <tr *ngFor="let mascota of arrayMascotas" [ngStyle]="{'background-color': (!mascota.tipo) ? '#66CCFF' : '#FF9999' }">
+            <td>{{mascota.nombre}}</td>
+            <td>{{mascota.fecha}}</td>
+            <td>{{(mascota.tipo == 0) ? 'Gato' : 'Perro'}}</td>
+            <td>
+                <img width="20" height="20" [src]="'http://localhost:8080/fotos/'+mascota.ruta"  alt="" />
+            </td>
+            <td>
+                <app-boton-borrar  [idBorrar]="mascota.id"></app-boton-borrar>
+            </td>
+        </tr>
+    </table>
+</div>
